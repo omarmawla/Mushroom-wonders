@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: mushroom-wonders
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SSLCOMMERZ_IS_SANDBOX
+        value: "true"
+      - key: SSLCOMMERZ_STORE_ID
+        value: testbox
+      - key: SSLCOMMERZ_STORE_PASSWD
+        value: qwerty
+      - key: WHATSAPP_NUMBER
+        value: "8801516567622"

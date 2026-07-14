@@ -5,7 +5,8 @@ const crypto = require('crypto');
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
-const SITE_URL = (process.env.SITE_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
+const RENDER_URL = process.env.RENDER_EXTERNAL_HOSTNAME ? `https://${process.env.RENDER_EXTERNAL_HOSTNAME}` : '';
+const SITE_URL = (process.env.SITE_URL || RENDER_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
 const IS_SANDBOX = process.env.SSLCOMMERZ_IS_SANDBOX !== 'false';
 const SSL_BASE = IS_SANDBOX ? 'https://sandbox.sslcommerz.com' : 'https://securepay.sslcommerz.com';
 const STORE_ID = process.env.SSLCOMMERZ_STORE_ID || (IS_SANDBOX ? 'testbox' : '');

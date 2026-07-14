@@ -17,6 +17,8 @@ A bilingual Bangla and English website for an organic oyster mushroom business i
 - Server-side product and delivery-price validation
 - Payment validation, IPN handling, and risk checks
 - Automatic WhatsApp order confirmation after a successful online payment
+- Free bilingual FAQ chatbot with typo-tolerant matching and verified safety sources
+- Draggable floating chat button with quick questions and WhatsApp fallback
 
 ## Order flow
 
@@ -62,7 +64,7 @@ Mushroom-wonders/
 │   ├── payment-fail.html
 │   └── assets/
 │       ├── css/            # Shared site styles
-│       ├── js/             # Shared, checkout, and payment scripts
+│       ├── js/             # Shared, chatbot, checkout, and payment scripts
 │       └── images/         # Product and gallery images
 ├── server.js               # Express API and payment integration
 ├── package.json            # Node.js scripts and dependencies

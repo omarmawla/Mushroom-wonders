@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>গ্যালারি — Mushroom Wonders</title>
+  <meta name="description" content="তাজা ও শুকনা ওয়েস্টার মাশরুমের ছবি — Mushroom Wonders গ্যালারি।" />
+  <meta name="theme-color" content="#1e7e34" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header card section">
+      <div class="topbar">
+        <a class="brand" href="index.html">🍄 Mushroom Wonders</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+          <button id="langEn" type="button" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="nav_home">হোম</a>
+        <a href="gallery.html" class="nav-link--active" data-i18n="nav_gallery">গ্যালারি</a>
+        <a href="storage.html" data-i18n="nav_storage">সংরক্ষণ</a>
+        <a href="recipes.html" data-i18n="nav_recipes">রেসিপি</a>
+        <a href="order.html" data-i18n="nav_order">অর্ডার</a>
+      </nav>
+    </header>
+
+    <section class="gallery-section card section fade-in" data-observe aria-labelledby="galleryTitle">
+      <h2 id="galleryTitle" data-i18n="gallery_title">তাজা সংগ্রহ — গ্যালারি</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/download (1).jpeg" alt="Fresh oyster mushrooms on a wooden board">
+          <figcaption class="gallery-caption" data-i18n="cap1">তাজা ওয়েস্টার মাশরুম — সকাল বেলার হার্ভেস্ট</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/download (2).jpeg" alt="Close up of mushroom texture">
+          <figcaption class="gallery-caption" data-i18n="cap2">প্রাকৃতিক টেক্সচার — ১০০% কেমিক্যাল-মুক্ত</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/download (4).jpeg" alt="Mushroom stir fry in a pan">
+          <figcaption class="gallery-caption" data-i18n="cap3">রান্নার জন্য রেডি — কম ক্যালোরি, বেশি স্বাদ</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/download.jpeg" alt="Dried mushrooms in a jar">
+          <figcaption class="gallery-caption" data-i18n="cap4">শুকনা মাশরুম — দীর্ঘদিন সংরক্ষণযোগ্য</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="section card fade-in" data-observe>
+      &copy; <span id="year"></span> Mushroom Wonders. <span data-i18n="rights">সর্বস্বত্ব সংরক্ষিত।</span>
+    </footer>
+  </div>
+
+  <a class="fab" href="https://wa.me/8801516567622" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+    <span>💬</span> <span data-i18n="chat_now">চ্যাট করুন</span>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>রেসিপি — Mushroom Wonders</title>
+  <meta name="description" content="ডায়াবেটিস রোগীদের জন্য স্বাস্থ্যকর ওয়েস্টার মাশরুম রেসিপি।" />
+  <meta name="theme-color" content="#1e7e34" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header card section">
+      <div class="topbar">
+        <a class="brand" href="index.html">🍄 Mushroom Wonders</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+          <button id="langEn" type="button" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="nav_home">হোম</a>
+        <a href="gallery.html" data-i18n="nav_gallery">গ্যালারি</a>
+        <a href="storage.html" data-i18n="nav_storage">সংরক্ষণ</a>
+        <a href="recipes.html" class="nav-link--active" data-i18n="nav_recipes">রেসিপি</a>
+        <a href="order.html" data-i18n="nav_order">অর্ডার</a>
+      </nav>
+    </header>
+
+    <section class="recipe-section card section fade-in" data-observe aria-labelledby="recipeTitle">
+      <h2 id="recipeTitle" class="recipe-title" data-i18n="recipe_title">ডায়াবেটিস রোগীদের জন্য ওয়েস্টার মাশরুম রান্নার সহজ ও স্বাস্থ্যকর উপায়</h2>
+      <p data-i18n="recipe_intro">গুণাগুণ বজায় রেখে রক্তে শর্করার ওপর ইতিবাচক প্রভাব রাখতে এই চারটি স্বাস্থ্যকর পদ্ধতি অনুসরণ করুন।</p>
+
+      <div class="recipe-grid" id="recipes">
+        <article class="recipe-box">
+          <h3>১) <span data-i18n="r1">ওয়েস্টার মাশরুম স্যুপ</span> <button type="button" class="btn btn-primary toggle-btn" data-toggle="#recipe1" aria-controls="recipe1" aria-expanded="false" data-i18n="btn_method">রান্নার পদ্ধতি</button></h3>
+          <div class="recipe-content" id="recipe1" hidden>
+            <ul>
+              <li>১ কাপ কুচানো ওয়েস্টার মাশরুম</li>
+              <li>১ চা-চামচ অলিভ অয়েল/সরিষার তেল</li>
+              <li>১ কাপ পানি/সবজি স্টক</li>
+              <li>১/২ চা-চামচ আদা ও রসুন বাটা</li>
+              <li>১/৪ চা-চামচ লবণ (কম লবণ দিন)</li>
+              <li>সামান্য গোলমরিচ গুঁড়ো</li>
+            </ul>
+            <p><strong>পদ্ধতি:</strong> তেলে আদা-রসুন ভেজে মাশরুম নরম করুন, পানি/স্টক দিয়ে সিদ্ধ করে লবণ-গোলমরিচ দিন।</p>
+          </div>
+        </article>
+
+        <article class="recipe-box">
+          <h3>২) <span data-i18n="r2">ভাপে রান্না করা ওয়েস্টার মাশরুম</span> <button type="button" class="btn btn-primary toggle-btn" data-toggle="#recipe2" aria-controls="recipe2" aria-expanded="false" data-i18n="btn_method">রান্নার পদ্ধতি</button></h3>
+          <div class="recipe-content" id="recipe2" hidden>
+            <ul>
+              <li>১ কাপ ওয়েস্টার মাশরুম</li>
+              <li>১ চা-চামচ অলিভ অয়েল</li>
+              <li>১/২ চা-চামচ গোলমরিচ গুঁড়া</li>
+              <li>১ চিমটি লবণ</li>
+              <li>১ চিমটি হলুদ গুঁড়া</li>
+            </ul>
+            <p><strong>পদ্ধতি:</strong> পাতলা কেটে স্টিমারে ভাপে রান্না করুন, শেষে লবণ-গোলমরিচ দিন।</p>
+          </div>
+        </article>
+
+        <article class="recipe-box">
+          <h3>৩) <span data-i18n="r3">ওয়েস্টার মাশরুম সালাদ</span> <button type="button" class="btn btn-primary toggle-btn" data-toggle="#recipe3" aria-controls="recipe3" aria-expanded="false" data-i18n="btn_method">রান্নার পদ্ধতি</button></h3>
+          <div class="recipe-content" id="recipe3" hidden>
+            <ul>
+              <li>১ কাপ সিদ্ধ ওয়েস্টার মাশরুম</li>
+              <li>১/২ কাপ শসা ও গাজর কুচি</li>
+              <li>১ টেবিলচামচ লেবুর রস</li>
+              <li>১ চিমটি বিট লবণ</li>
+              <li>১ চা-চামচ অলিভ অয়েল</li>
+              <li>১/২ চা-চামচ কালো গোলমরিচ গুঁড়া</li>
+            </ul>
+            <p><strong>পদ্ধতি:</strong> সব উপকরণ মিশিয়ে ১০ মিনিট রেখে পরিবেশন করুন।</p>
+          </div>
+        </article>
+
+        <article class="recipe-box">
+          <h3>৪) <span data-i18n="r4">ওয়েস্টার মাশরুম ভাজি</span> <button type="button" class="btn btn-primary toggle-btn" data-toggle="#recipe4" aria-controls="recipe4" aria-expanded="false" data-i18n="btn_method">রান্নার পদ্ধতি</button></h3>
+          <div class="recipe-content" id="recipe4" hidden>
+            <ul>
+              <li>১ কাপ পাতলা কাটা ওয়েস্টার মাশরুম</li>
+              <li>১ চা-চামচ সরিষার তেল/অলিভ অয়েল</li>
+              <li>১/২ চা-চামচ হলুদ গুঁড়া</li>
+              <li>১/২ চা-চামচ ধনে গুঁড়া</li>
+              <li>১ চিমটি লবণ</li>
+              <li>১/২ চা-চামচ কাঁচা মরিচ কুচি</li>
+            </ul>
+            <p><strong>পদ্ধতি:</strong> গরম তেলে কাঁচা মরিচ দিন, মাশরুম দিয়ে নাড়াচাড়া করে মসলা-লবণ দিয়ে ভাজুন।</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="section card fade-in" data-observe>
+      &copy; <span id="year"></span> Mushroom Wonders. <span data-i18n="rights">সর্বস্বত্ব সংরক্ষিত।</span>
+    </footer>
+  </div>
+
+  <a class="fab" href="https://wa.me/8801516567622" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+    <span>💬</span> <span data-i18n="chat_now">চ্যাট করুন</span>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>

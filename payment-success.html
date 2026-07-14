@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment successful — Mushroom Wonders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card payment-result">
+      <div class="payment-result__icon" aria-hidden="true">✅</div>
+      <h1 data-i18n="pay_success_title">পেমেন্ট সফল!</h1>
+      <p data-i18n="pay_success_desc">আপনার অর্ডার নিশ্চিত হয়েছে। শীঘ্রই যোগাযোগ করা হবে।</p>
+      <dl class="payment-result__details">
+        <div class="summary-row"><dt data-i18n="pay_ref">অর্ডার রেফারেন্স</dt><dd id="resultTran">—</dd></div>
+        <div class="summary-row"><dt data-i18n="pay_amount">পরিশোধিত</dt><dd id="resultAmount">—</dd></div>
+        <div class="summary-row"><dt data-i18n="pay_product">পণ্য</dt><dd id="resultProduct">—</dd></div>
+      </dl>
+      <p id="whatsappRedirectMessage" class="payment-redirect" data-i18n="pay_opening_whatsapp" hidden>পেমেন্ট নিশ্চিত হয়েছে। অর্ডার নিশ্চিত করতে ৫ সেকেন্ড পর WhatsApp-এ নেওয়া হবে…</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="payment-result.js"></script>
+</body>
+</html>

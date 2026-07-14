@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>সংরক্ষণ পদ্ধতি — Mushroom Wonders</title>
+  <meta name="description" content="ওয়েস্টার মাশরুম সংরক্ষণের সঠিক পদ্ধতি — ফ্রিজ, ডিপ ফ্রিজ ও শুকানো।" />
+  <meta name="theme-color" content="#1e7e34" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header card section">
+      <div class="topbar">
+        <a class="brand" href="index.html">🍄 Mushroom Wonders</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+          <button id="langEn" type="button" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="nav_home">হোম</a>
+        <a href="gallery.html" data-i18n="nav_gallery">গ্যালারি</a>
+        <a href="storage.html" class="nav-link--active" data-i18n="nav_storage">সংরক্ষণ</a>
+        <a href="recipes.html" data-i18n="nav_recipes">রেসিপি</a>
+        <a href="order.html" data-i18n="nav_order">অর্ডার</a>
+      </nav>
+    </header>
+
+    <section class="storage-section card section fade-in" data-observe aria-labelledby="storageTitle">
+      <h2 id="storageTitle" data-i18n="storage_title">সংরক্ষণ পদ্ধতি</h2>
+      <ul class="storage-list">
+        <li class="storage-item">
+          <div class="row">
+            <span class="storage-text" data-i18n="st1">ফ্রিজে সংরক্ষণ (৩–৭ দিন)</span>
+            <button type="button" class="btn btn-primary toggle-btn" data-toggle="#method1" aria-controls="method1" aria-expanded="false" data-i18n="btn_more">বিস্তারিত জানুন</button>
+          </div>
+          <div class="details" id="method1" hidden>
+            ✅ মাশরুম ধোয়া যাবে না (ধুলে নরম হয়ে যেতে পারে)।<br>
+            ✅ কাগজের ব্যাগ/ছিদ্রযুক্ত পলিথিনে রেখে ফ্রিজের নিচের দিকে সংরক্ষণ করুন।<br>
+            ✅ প্লাস্টিকের পাত্র/সিল করা ব্যাগে রাখবেন না।<br>
+            🛑 ভুল: পলিথিনে মুখ বন্ধ করলে আর্দ্রতা জমে দ্রুত নষ্ট হবে।
+          </div>
+        </li>
+        <li class="storage-item">
+          <div class="row">
+            <span class="storage-text" data-i18n="st2">ফ্রিজ ছাড়া সংরক্ষণ (১–২ দিন)</span>
+            <button type="button" class="btn btn-primary toggle-btn" data-toggle="#method2" aria-controls="method2" aria-expanded="false" data-i18n="btn_more">বিস্তারিত জানুন</button>
+          </div>
+          <div class="details" id="method2" hidden>
+            ✅ ঠাণ্ডা, শুকনো, বায়ু চলাচলযোগ্য স্থানে রাখুন।<br>
+            ✅ কাপড়ের ব্যাগ/খোলা ট্রেতে ১–২ দিন ভালো থাকবে।<br>
+            🛑 ভুল: বেশি গরম/রোদে বা বন্ধ জায়গায় রাখলে দ্রুত নষ্ট হবে।
+          </div>
+        </li>
+        <li class="storage-item">
+          <div class="row">
+            <span class="storage-text" data-i18n="st3">ডিপ ফ্রিজে সংরক্ষণ (১–২ মাস)</span>
+            <button type="button" class="btn btn-primary toggle-btn" data-toggle="#method3" aria-controls="method3" aria-expanded="false" data-i18n="btn_more">বিস্তারিত জানুন</button>
+          </div>
+          <div class="details" id="method3" hidden>
+            ✅ ২–৩ মিনিট ভাপ/গরম পানিতে দিয়ে ঠান্ডা করুন (blanch), তারপর ফ্রিজে রাখুন।<br>
+            ✅ বায়ুরোধী ব্যাগ/কন্টেইনার ব্যবহার করুন।<br>
+            🛑 ভুল: কাঁচা অবস্থায় দীর্ঘমেয়াদে ফ্রিজে রাখলে গুণগত মান নষ্ট হতে পারে।
+          </div>
+        </li>
+        <li class="storage-item">
+          <div class="row">
+            <span class="storage-text" data-i18n="st4">শুকিয়ে সংরক্ষণ (৬ মাস–১ বছর)</span>
+            <button type="button" class="btn btn-primary toggle-btn" data-toggle="#method4" aria-controls="method4" aria-expanded="false" data-i18n="btn_more">বিস্তারিত জানুন</button>
+          </div>
+          <div class="details" id="method4" hidden>
+            ✅ পাতলা করে কেটে রোদে শুকান বা ৪৫–৫০°C ওভেনে ৫–৬ ঘন্টা।<br>
+            ✅ সম্পূর্ণ শুকালে এয়ারটাইট কাঁচের বয়ামে রাখুন।<br>
+            🛑 ভুল: অর্ধেক শুকালে ছাঁচ/পচন হতে পারে।
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="section card fade-in" data-observe>
+      &copy; <span id="year"></span> Mushroom Wonders. <span data-i18n="rights">সর্বস্বত্ব সংরক্ষিত।</span>
+    </footer>
+  </div>
+
+  <a class="fab" href="https://wa.me/8801516567622" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+    <span>💬</span> <span data-i18n="chat_now">চ্যাট করুন</span>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>

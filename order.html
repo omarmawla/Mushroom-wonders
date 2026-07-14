@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>অর্ডার করুন — Mushroom Wonders</title>
+  <meta name="description" content="Mushroom Wonders থেকে ওয়েস্টার মাশরুম অর্ডার করুন — বাংলাদেশ জুড়ে ডেলিভারি।" />
+  <meta name="theme-color" content="#1e7e34" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header card section">
+      <div class="topbar">
+        <a class="brand" href="index.html">🍄 Mushroom Wonders</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+          <button id="langEn" type="button" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="nav_home">হোম</a>
+        <a href="gallery.html" data-i18n="nav_gallery">গ্যালারি</a>
+        <a href="storage.html" data-i18n="nav_storage">সংরক্ষণ</a>
+        <a href="recipes.html" data-i18n="nav_recipes">রেসিপি</a>
+        <a href="order.html" class="nav-link--active" data-i18n="nav_order">অর্ডার</a>
+      </nav>
+    </header>
+
+    <section class="order-page card section fade-in" data-observe>
+      <div class="order-page__header">
+        <h2 data-i18n="order_title">📦 অর্ডার করুন</h2>
+        <p data-i18n="order_desc">বাংলাদেশের যেকোনো জায়গা থেকে অর্ডার করা যাবে। ডেলিভারি: ১–৩ দিন।</p>
+      </div>
+
+      <div class="order-layout">
+        <div class="order-main">
+          <!-- Step indicator -->
+          <ol class="order-steps" aria-label="Order progress">
+            <li class="order-step is-active" data-step="1">
+              <span class="order-step__num">1</span>
+              <span class="order-step__label" data-i18n="step_info">তথ্য</span>
+            </li>
+            <li class="order-step" data-step="2">
+              <span class="order-step__num">2</span>
+              <span class="order-step__label" data-i18n="step_delivery">ডেলিভারি</span>
+            </li>
+            <li class="order-step" data-step="3">
+              <span class="order-step__num">3</span>
+              <span class="order-step__label" data-i18n="step_payment">পেমেন্ট</span>
+            </li>
+          </ol>
+
+          <form id="orderForm" novalidate>
+            <!-- Step 1: Customer & Product -->
+            <div class="order-panel is-visible" id="panel1" data-panel="1">
+              <h3 class="order-panel__title" data-i18n="step1_title" tabindex="-1">আপনার তথ্য ও পণ্য</h3>
+
+              <div class="form-grid">
+                <label class="form-field">
+                  <span class="form-label" data-i18n="label_name">আপনার নাম *</span>
+                  <input type="text" id="name" required autocomplete="name">
+                </label>
+                <label class="form-field">
+                  <span class="form-label" data-i18n="label_phone">মোবাইল নম্বর *</span>
+                  <input type="tel" id="phone" required placeholder="01XXXXXXXXX" pattern="^01[3-9]\d{8}$" inputmode="numeric" autocomplete="tel">
+                  <small class="form-hint" data-i18n="phone_help">১১ ডিজিট, 01 দিয়ে শুরু</small>
+                </label>
+              </div>
+
+              <div class="form-field">
+                <span class="form-label" data-i18n="label_product">পণ্য নির্বাচন *</span>
+                <div class="product-cards" id="productCards" role="radiogroup" aria-label="Product selection">
+                  <label class="product-card">
+                    <input type="radio" name="productRadio" value="fresh_250g" data-price="150" required>
+                    <span class="product-card__inner">
+                      <span class="product-card__name" data-i18n="product_fresh">ওয়েস্টার মাশরুম</span>
+                      <span class="product-card__size">250g</span>
+                      <span class="product-card__price">৳150</span>
+                    </span>
+                  </label>
+                  <label class="product-card">
+                    <input type="radio" name="productRadio" value="fresh_500g" data-price="280">
+                    <span class="product-card__inner">
+                      <span class="product-card__name" data-i18n="product_fresh">ওয়েস্টার মাশরুম</span>
+                      <span class="product-card__size">500g</span>
+                      <span class="product-card__price">৳280</span>
+                    </span>
+                  </label>
+                  <label class="product-card">
+                    <input type="radio" name="productRadio" value="fresh_1kg" data-price="520">
+                    <span class="product-card__inner">
+                      <span class="product-card__name" data-i18n="product_fresh">ওয়েস্টার মাশরুম</span>
+                      <span class="product-card__size">1kg</span>
+                      <span class="product-card__price">৳520</span>
+                    </span>
+                  </label>
+                  <label class="product-card">
+                    <input type="radio" name="productRadio" value="dried_50g" data-price="200">
+                    <span class="product-card__inner">
+                      <span class="product-card__name" data-i18n="product_dried">শুকনা মাশরুম</span>
+                      <span class="product-card__size">50g</span>
+                      <span class="product-card__price">৳200</span>
+                    </span>
+                  </label>
+                </div>
+                <select id="product" required hidden aria-hidden="true" tabindex="-1">
+                  <option value="">--</option>
+                  <option value="fresh_250g" data-price="150">250g</option>
+                  <option value="fresh_500g" data-price="280">500g</option>
+                  <option value="fresh_1kg" data-price="520">1kg</option>
+                  <option value="dried_50g" data-price="200">50g</option>
+                </select>
+              </div>
+
+              <label class="form-field form-field--qty">
+                <span class="form-label" data-i18n="label_qty">পরিমাণ *</span>
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease">−</button>
+                  <input type="number" id="qty" required min="1" max="99" value="1">
+                  <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase">+</button>
+                </div>
+              </label>
+            </div>
+
+            <!-- Step 2: Delivery -->
+            <div class="order-panel" id="panel2" data-panel="2" hidden>
+              <h3 class="order-panel__title" data-i18n="step2_title" tabindex="-1">ডেলিভারি ঠিকানা</h3>
+
+              <label class="form-field">
+                <span class="form-label" data-i18n="label_area">ডেলিভারি এরিয়া *</span>
+                <select id="area" required>
+                  <option value="" data-i18n="opt_choose">-- নির্বাচন করুন --</option>
+                  <option value="dhaka_city" data-fee="60" data-i18n="area_dhaka_city">ঢাকা সিটি — ৳৬০</option>
+                  <option value="dhaka_metro" data-fee="100" data-i18n="area_dhaka_metro">ঢাকা মেট্রো (সাভার/টঙ্গী/নারায়ণগঞ্জ) — ৳১০০</option>
+                  <option value="outside_dhaka" data-fee="130" data-i18n="area_outside">ঢাকার বাইরে — ৳১৩০</option>
+                  <option value="remote" data-fee="180" data-i18n="area_remote">দূরবর্তী এলাকা — ৳১৮০</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span class="form-label" data-i18n="label_address">ঠিকানা *</span>
+                <textarea id="address" required rows="3" autocomplete="street-address"></textarea>
+              </label>
+
+              <button type="button" class="btn btn-map" id="openMapBtn">
+                <span>📍</span> <span data-i18n="btn_map">মানচিত্র থেকে ঠিকানা বেছে নিন</span>
+              </button>
+
+              <div id="mapContainer" class="map-wrap" hidden>
+                <p class="map-hint" data-i18n="map_hint">মানচিত্রে ক্লিক করুন বা পিন টেনে আনুন</p>
+                <div id="map"></div>
+                <p id="mapStatus" class="map-status" aria-live="polite"></p>
+                <div class="map-actions">
+                  <button type="button" class="btn btn-outline" id="myLocationBtn" data-i18n="btn_my_location">Use My Location</button>
+                  <button type="button" class="btn btn-outline" id="fullscreenMapBtn" data-i18n="btn_fullscreen" aria-pressed="false">Full Screen</button>
+                  <button type="button" class="btn btn-primary" id="confirmLocationBtn" data-i18n="btn_confirm_loc">Use This Address</button>
+                  <button type="button" class="btn btn-outline" id="closeMapBtn" data-i18n="btn_close_map">Close Map</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="order-panel" id="panel3" data-panel="3" hidden>
+              <h3 class="order-panel__title" data-i18n="step3_title" tabindex="-1">পেমেন্ট পদ্ধতি বেছে নিন</h3>
+              <p class="order-panel__sub" data-i18n="step3_sub">নিরাপদ পেমেন্ট গেটওয়ের মাধ্যমে সরাসরি ওয়েবসাইট থেকে পেমেন্ট করুন</p>
+
+              <div class="payment-methods" id="paymentMethods" role="radiogroup">
+                <label class="payment-card payment-card--bkash">
+                  <input type="radio" name="paymentMethod" value="bkash" checked>
+                  <span class="payment-card__inner">
+                    <span class="payment-card__icon">bKash</span>
+                    <span class="payment-card__name" data-i18n="pay_bkash">বিকাশ</span>
+                    <span class="payment-card__desc" data-i18n="pay_bkash_desc">মোবাইল ওয়ালেট</span>
+                  </span>
+                </label>
+                <label class="payment-card payment-card--nagad">
+                  <input type="radio" name="paymentMethod" value="nagad">
+                  <span class="payment-card__inner">
+                    <span class="payment-card__icon">Nagad</span>
+                    <span class="payment-card__name" data-i18n="pay_nagad">নগদ</span>
+                    <span class="payment-card__desc" data-i18n="pay_nagad_desc">মোবাইল ওয়ালেট</span>
+                  </span>
+                </label>
+                <label class="payment-card payment-card--card">
+                  <input type="radio" name="paymentMethod" value="card">
+                  <span class="payment-card__inner">
+                    <span class="payment-card__icon">💳</span>
+                    <span class="payment-card__name" data-i18n="pay_card">ব্যাংক কার্ড</span>
+                    <span class="payment-card__desc" data-i18n="pay_card_desc">Visa, Mastercard, Amex</span>
+                  </span>
+                </label>
+                <label class="payment-card payment-card--cod">
+                  <input type="radio" name="paymentMethod" value="cod">
+                  <span class="payment-card__inner">
+                    <span class="payment-card__icon">৳</span>
+                    <span class="payment-card__name" data-i18n="pay_cod">ক্যাশ অন ডেলিভারি</span>
+                    <span class="payment-card__desc" data-i18n="pay_cod_desc">পণ্য হাতে পেয়ে টাকা দিন</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="payment-secure" data-i18n="pay_secure">🔒 SSLCommerz দ্বারা সুরক্ষিত পেমেন্ট</div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="order-nav">
+              <button type="button" class="btn btn-outline" id="btnBack" hidden data-i18n="btn_back">পিছনে</button>
+              <button type="button" class="btn btn-primary" id="btnNext" data-i18n="btn_next">পরবর্তী</button>
+              <button type="button" class="btn btn-pay" id="btnPay" hidden data-i18n="btn_pay">৳0 — পেমেন্ট করুন</button>
+            </div>
+            <p id="orderStatus" class="order-status" role="alert" hidden></p>
+          </form>
+        </div>
+
+        <!-- Order summary sidebar -->
+        <aside class="order-summary" aria-label="Order summary">
+          <h3 data-i18n="summary_title">অর্ডার সারাংশ</h3>
+          <dl class="summary-list">
+            <div class="summary-row">
+              <dt data-i18n="summary_product">পণ্য</dt>
+              <dd id="sumProduct">—</dd>
+            </div>
+            <div class="summary-row">
+              <dt data-i18n="summary_qty">পরিমাণ</dt>
+              <dd id="sumQty">1</dd>
+            </div>
+            <div class="summary-row">
+              <dt data-i18n="summary_area">এলাকা</dt>
+              <dd id="sumArea">—</dd>
+            </div>
+            <div class="summary-row summary-row--divider"></div>
+            <div class="summary-row">
+              <dt data-i18n="lbl_subtotal">পণ্য</dt>
+              <dd>৳<span id="subtotal">0</span></dd>
+            </div>
+            <div class="summary-row">
+              <dt data-i18n="lbl_delivery">ডেলিভারি</dt>
+              <dd>৳<span id="shipping">0</span></dd>
+            </div>
+            <div class="summary-row summary-row--total">
+              <dt data-i18n="lbl_total">মোট</dt>
+              <dd>৳<span id="total">0</span></dd>
+            </div>
+          </dl>
+          <p class="summary-note" data-i18n="summary_note">ডেলিভারি ১–৩ কর্মদিবসে</p>
+        </aside>
+      </div>
+
+      <div class="order-contact">
+        <a class="btn btn-outline" href="https://www.facebook.com/profile.php?id=61570530083272" target="_blank" rel="noopener">🌐 Facebook</a>
+        <a class="btn btn-outline" href="https://wa.me/8801516567622" target="_blank" rel="noopener">📱 WhatsApp</a>
+      </div>
+    </section>
+
+    <footer class="section card fade-in" data-observe>
+      &copy; <span id="year"></span> Mushroom Wonders. <span data-i18n="rights">সর্বস্বত্ব সংরক্ষিত।</span>
+    </footer>
+  </div>
+
+  <a class="fab" href="https://wa.me/8801516567622" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+    <span>💬</span> <span data-i18n="chat_now">চ্যাট করুন</span>
+  </a>
+
+  <div id="payOverlay" class="pay-overlay" hidden>
+    <div class="pay-overlay__box">
+      <div class="pay-spinner"></div>
+      <p id="payOverlayText" data-i18n="pay_redirecting">পেমেন্ট গেটওয়েতে পাঠানো হচ্ছে...</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script.js"></script>
+  <script src="order.js"></script>
+</body>
+</html>

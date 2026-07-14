@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mushroom Wonders — ১০০% অর্গানিক ওয়েস্টার মাশরুম</title>
+  <meta name="description" content="Mushroom Wonders — ১০০% অর্গানিক ও কেমিক্যাল-মুক্ত ওয়েস্টার মাশরুম। সংরক্ষণ পদ্ধতি, রেসিপি, অর্ডার ও যোগাযোগ।" />
+  <link rel="canonical" href="https://example.com/" />
+  <meta property="og:title" content="Mushroom Wonders — ১০০% অর্গানিক ওয়েস্টার মাশরুম" />
+  <meta property="og:description" content="সংরক্ষণ পদ্ধতি, রেসিপি, অর্ডার ও যোগাযোগ।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1611281404780-95799250d540?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3" />
+  <meta name="theme-color" content="#1e7e34" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header card section">
+      <div class="topbar">
+        <a class="brand" href="index.html">🍄 Mushroom Wonders</a>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+          <button id="langEn" type="button" aria-pressed="false">English</button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link--active" data-i18n="nav_home">হোম</a>
+        <a href="gallery.html" data-i18n="nav_gallery">গ্যালারি</a>
+        <a href="storage.html" data-i18n="nav_storage">সংরক্ষণ</a>
+        <a href="recipes.html" data-i18n="nav_recipes">রেসিপি</a>
+        <a href="order.html" data-i18n="nav_order">অর্ডার</a>
+      </nav>
+    </header>
+
+    <header class="thank-you-heading card section fade-in" data-observe>
+      <span data-i18n="hero_line">ধন্যবাদ আমাদের সাথে থাকার জন্য</span>
+      <a class="brand-link" href="https://www.facebook.com/profile.php?id=61570530083272" target="_blank" rel="noopener">Mushroom Wonders</a>
+      — <span data-i18n="hero_sub">আপনার সুস্বাস্থ্যই আমাদের অগ্রাধিকার।</span>
+    </header>
+
+    <section class="feature-box card section fade-in" data-observe aria-labelledby="featureTitle">
+      <h2 id="featureTitle" data-i18n="features_title">আমাদের মাশরুমের বিশেষ বৈশিষ্ট্য</h2>
+      <ul class="feature-list">
+        <li data-i18n="f1">✅ ১০০% অর্গানিক এবং কেমিক্যাল-মুক্ত</li>
+        <li data-i18n="f2">✅ প্রোটিন ও ফাইবারে সমৃদ্ধ</li>
+        <li data-i18n="f3">✅ রোগ প্রতিরোধ ক্ষমতা বাড়ায়</li>
+        <li data-i18n="f4">✅ ক্যালোরি কম — ওজন নিয়ন্ত্রণে সহায়ক</li>
+      </ul>
+      <div class="center" style="display:flex; justify-content:center; margin-top:10px;">
+        <button type="button" class="btn btn-outline toggle-btn" data-toggle="#featureHidden" aria-controls="featureHidden" aria-expanded="false" data-i18n="btn_more">বিস্তারিত জানুন</button>
+      </div>
+      <div class="details" id="featureHidden" hidden>
+        <ul style="margin-top:10px;">
+          <li data-i18n="f5">✅ হৃদয়বান্ধব ও কোলেস্টেরল-মুক্ত</li>
+          <li data-i18n="f6">✅ তাজা হার্ভেস্ট — পূর্ণ পুষ্টিগুণ</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card section fade-in" data-observe>
+      <h2 style="text-align:center; margin:0 0 6px;" data-i18n="home_explore">আমাদের ওয়েস্টার মাশরুম সম্পর্কে আরও জানুন</h2>
+      <div class="home-links">
+        <a href="gallery.html" class="home-link-card">
+          <h3 data-i18n="home_gallery_title">গ্যালারি</h3>
+          <p data-i18n="home_gallery_desc">তাজা ও শুকনা মাশরুমের ছবি দেখুন</p>
+        </a>
+        <a href="storage.html" class="home-link-card">
+          <h3 data-i18n="home_storage_title">সংরক্ষণ পদ্ধতি</h3>
+          <p data-i18n="home_storage_desc">ফ্রিজ, ডিপ ফ্রিজ ও শুকানোর সঠিক উপায়</p>
+        </a>
+        <a href="recipes.html" class="home-link-card">
+          <h3 data-i18n="home_recipes_title">রেসিপি</h3>
+          <p data-i18n="home_recipes_desc">ডায়াবেটিস-বান্ধব স্বাস্থ্যকর রান্নার পদ্ধতি</p>
+        </a>
+        <a href="order.html" class="home-link-card">
+          <h3 data-i18n="home_order_title">অর্ডার করুন</h3>
+          <p data-i18n="home_order_desc">পণ্য বেছে নিন ও WhatsApp-এ অর্ডার পাঠান</p>
+        </a>
+      </div>
+      <div class="home-cta">
+        <a href="order.html" class="btn btn-primary" data-i18n="home_cta">📦 এখনই অর্ডার করুন</a>
+      </div>
+    </section>
+
+    <footer class="section card fade-in" data-observe>
+      &copy; <span id="year"></span> Mushroom Wonders. <span data-i18n="rights">সর্বস্বত্ব সংরক্ষিত।</span>
+    </footer>
+  </div>
+
+  <a class="fab" href="https://wa.me/8801516567622" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+    <span>💬</span> <span data-i18n="chat_now">চ্যাট করুন</span>
+  </a>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mushroom Wonders",
+    "image": "https://images.unsplash.com/photo-1611281404780-95799250d540?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "url": "https://example.com/",
+    "telephone": "+8801516567622",
+    "address": {"@type":"PostalAddress","addressCountry":"BD"},
+    "sameAs": ["https://www.facebook.com/profile.php?id=61570530083272"]
+  }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

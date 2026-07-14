@@ -1,13 +1,13 @@
 # Mushroom Wonders
 
-A bilingual Bangla and English website for an organic oyster mushroom business in Bangladesh.
+A bilingual English and Bangla website for an organic oyster mushroom business in Bangladesh.
 
 **Live demo:** [mushroom-wonders.onrender.com](https://mushroom-wonders.onrender.com)
 
 ## Features
 
 - Separate Home, Gallery, Storage, Recipes, and Order pages
-- Bangla and English language support
+- English-first language support with a Bangla toggle
 - Responsive three-step checkout
 - Product selection, quantity controls, delivery fees, and live order totals
 - Interactive OpenStreetMap location picker with fullscreen view

@@ -112,12 +112,14 @@ const i18n = {
   }
 };
 
-function applyI18n(lang){
+function applyI18n(lang, options = {}){
   lang = lang === 'en' ? 'en' : 'bn';
   const dict = i18n[lang];
   document.documentElement.lang = (lang === 'en' ? 'en' : 'bn');
   document.documentElement.setAttribute('data-lang', lang);
-  try { localStorage.setItem('mw-lang', lang); } catch (_) {}
+  if (options.persist) {
+    try { localStorage.setItem('mw-lang-choice', lang); } catch (_) {}
+  }
   if (langBnBtn && langEnBtn) {
     langBnBtn.setAttribute('aria-pressed', String(lang === 'bn'));
     langEnBtn.setAttribute('aria-pressed', String(lang === 'en'));
@@ -181,21 +183,21 @@ if (langBnBtn && langEnBtn) {
   langBnBtn.addEventListener('click', ()=>{
     langBnBtn.setAttribute('aria-pressed','true');
     langEnBtn.setAttribute('aria-pressed','false');
-    applyI18n('bn');
+    applyI18n('bn', { persist: true });
   });
   langEnBtn.addEventListener('click', ()=>{
     langBnBtn.setAttribute('aria-pressed','false');
     langEnBtn.setAttribute('aria-pressed','true');
-    applyI18n('en');
+    applyI18n('en', { persist: true });
   });
 }
 
 applyI18n((() => {
   try {
-    const saved = localStorage.getItem('mw-lang');
+    const saved = localStorage.getItem('mw-lang-choice');
     if (saved === 'bn' || saved === 'en') return saved;
   } catch (_) {}
-  return (navigator.language || '').toLowerCase().startsWith('bn') ? 'bn' : 'en';
+  return 'en';
 })());
 
 const yearEl = document.getElementById('year');

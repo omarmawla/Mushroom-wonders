@@ -41,7 +41,7 @@ if (!STORE_ID || !STORE_PASS) {
 app.disable('x-powered-by');
 app.use(express.json({ limit: '20kb' }));
 app.use(express.urlencoded({ extended: false, limit: '20kb' }));
-app.use(express.static(__dirname, { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
 
 function cleanText(value, maxLength) {
   return String(value || '').trim().replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, maxLength);

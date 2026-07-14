@@ -48,6 +48,29 @@ A bilingual Bangla and English website for an organic oyster mushroom business i
 - WhatsApp click-to-chat
 - Render deployment
 
+## Project structure
+
+```text
+Mushroom-wonders/
+├── public/                 # Browser-facing website
+│   ├── index.html
+│   ├── gallery.html
+│   ├── storage.html
+│   ├── recipes.html
+│   ├── order.html
+│   ├── payment-success.html
+│   ├── payment-fail.html
+│   └── assets/
+│       ├── css/            # Shared site styles
+│       ├── js/             # Shared, checkout, and payment scripts
+│       └── images/         # Product and gallery images
+├── server.js               # Express API and payment integration
+├── package.json            # Node.js scripts and dependencies
+├── render.yaml             # Render deployment blueprint
+├── .env.example            # Environment-variable template
+└── start-site.cmd          # Windows local launcher
+```
+
 ## Run locally
 
 Node.js 18 or newer is required.

@@ -293,7 +293,7 @@ setInterval(() => {
 
 app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found' }));
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Mushroom Wonders running at ${SITE_URL}`);
   console.log(`Payment mode: SSLCommerz ${IS_SANDBOX ? 'SANDBOX' : 'LIVE'}`);
 });
